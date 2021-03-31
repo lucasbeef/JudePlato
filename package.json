@@ -10,8 +10,10 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "immer": "^9.0.1",
     "react": "17.0.1",
-    "react-native": "0.64.0"
+    "react-native": "0.64.0",
+    "react-native-ui-lib": "^5.21.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
