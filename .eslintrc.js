@@ -9,5 +9,7 @@ module.exports = {
     indent: ['error', 2, { MemberExpression: 0 }],
     'global-require': ['off'],
     'react/jsx-one-expression-per-line': 'off',
+    'no-use-before-define': ['error'],
+    'object-curly-spacing': ['error', 'always'],
   },
 };
