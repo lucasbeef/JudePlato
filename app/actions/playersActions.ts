@@ -2,6 +2,24 @@ import produce from 'immer';
 
 import { PlayerType } from '../types/PlayerType';
 
+type newPlayerParamsType = {
+  firstName: string,
+  image?: string,
+};
+
+function createPlayerAction(players: PlayerType[], newPlayer: newPlayerParamsType): PlayerType[] {
+  const { firstName, image } = newPlayer;
+
+  return produce(players, (draftPlayers) => {
+    draftPlayers.push({
+      id: players.length,
+      position: -1,
+      firstName,
+      image,
+    });
+  });
+}
+
 /*
   Selects a player by setting its position
 */
@@ -40,4 +58,8 @@ function deselectPlayerAction(players: PlayerType[], id: number): PlayerType[] {
   });
 }
 
-export { selectPlayerAction, deselectPlayerAction };
+export {
+  createPlayerAction,
+  selectPlayerAction,
+  deselectPlayerAction,
+};

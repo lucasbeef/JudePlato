@@ -44,15 +44,15 @@ const PositionButton = ({ position, children, onPress }: PropsType) => {
       <View style={[styles.content]}>
         {children}
       </View>
-      {
-        position >= 0 && (
-          <View style={[styles.content, styles.positionOverlay]}>
-            <View style={styles.positionContainer}>
-              <Text style={styles.text}>{displayedPosition}</Text>
-            </View>
+      {position >= 0 && (
+        <View style={[styles.content, styles.positionOverlay]}>
+          <View style={styles.positionContainer}>
+            <Text style={styles.text}>{displayedPosition}</Text>
           </View>
-        )}
+        </View>
+      )}
     </TouchableOpacity>
   );
 };
+
 export default PositionButton;
