@@ -33,21 +33,27 @@ const styles = StyleSheet.create({
 type PropsType = {
   position: number,
   children: JSX.Element,
+  testID: string,
   onPress: () => void,
 }
 
-const PositionButton = ({ position, children, onPress }: PropsType) => {
+const PositionButton = ({
+  position,
+  children,
+  testID,
+  onPress,
+}: PropsType) => {
   const displayedPosition = position + 1;
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
+    <TouchableOpacity testID={testID} onPress={onPress} style={styles.button}>
       <View style={[styles.content]}>
         {children}
       </View>
       {position >= 0 && (
-        <View style={[styles.content, styles.positionOverlay]}>
+        <View testID={`${testID}.overlay`} style={[styles.content, styles.positionOverlay]}>
           <View style={styles.positionContainer}>
-            <Text style={styles.text}>{displayedPosition}</Text>
+            <Text testID={`${testID}.overlay.text`} style={styles.text}>{displayedPosition}</Text>
           </View>
         </View>
       )}

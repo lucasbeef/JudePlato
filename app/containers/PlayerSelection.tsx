@@ -17,11 +17,15 @@ type PropsType = {
 }
 
 /* TODO make the component generic using a renderProp or hook */
-const PlayerSelection = ({ players, onPlayerPress }: PropsType) => {
+const PlayerSelection = ({
+  players,
+  onPlayerPress,
+}: PropsType) => {
   const renderPlayer = (player: PlayerType) => (
     <PositionButton
       onPress={() => onPlayerPress(players, player.id)}
       position={player.position}
+      testID={`playerSelection.playerButton.${player.id}`}
     >
       <ProfilePicture image={player.image} name={player.firstName} />
     </PositionButton>
@@ -31,6 +35,7 @@ const PlayerSelection = ({ players, onPlayerPress }: PropsType) => {
     <FlatList
       data={players}
       numColumns={4}
+      testID="playerSelection"
       columnWrapperStyle={styles.columnWrapper}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => renderPlayer(item)}

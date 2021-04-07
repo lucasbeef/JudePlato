@@ -1,6 +1,9 @@
 module.exports = {
   root: true,
   extends: '@react-native-community',
+  plugins: [
+    'detox',
+  ],
   rules: {
     'prettier/prettier': 0,
     'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],

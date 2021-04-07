@@ -45,14 +45,18 @@ const NewPlayerModal = ({
       onRequestClose={closeModal}
       style={styles.modal}
     >
-      <View style={styles.content}>
+      <View testID="newPlayerModal" style={styles.content}>
         <TextField
           label="Name"
           placeholder="Georges"
           value={name}
+          testID="newPlayerModal.nameInput"
           onChangeText={setName}
         />
-        <Button label="Create" onPress={handleValidate} />
+        <Button
+          label="Create"
+          testID="newPlayerModal.validateButton"
+          onPress={handleValidate} />
       </View>
     </Modal>
   );

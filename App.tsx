@@ -74,6 +74,7 @@ const App = () => {
       <Button
         label="New Player"
         backgroundColor="blue"
+        testID="app.newPlayerButton"
         onPress={() => setNewPlayerModalOpened(true)}
       />
     </SafeAreaView>
